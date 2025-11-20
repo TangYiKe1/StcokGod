@@ -1,0 +1,18 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Java
+target/
+*.log
+*.tmp
+*.class
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# System
+.DS_Store
+Thumbs.db
