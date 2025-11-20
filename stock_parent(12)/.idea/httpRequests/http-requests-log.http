@@ -1,0 +1,18 @@
+GET http://localhost:8091/api/quot/external/index
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2025-09-02T182908.200.json
+
+###
+
+GET http://localhost:8091/api/quot/external/index
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2025-09-02T182557.200.json
+
+###
+

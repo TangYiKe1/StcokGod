@@ -1,0 +1,25 @@
+# web定义
+server:
+  port: 8092
+
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.169.129:3306/stock_db?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  profiles:
+    active: stock,mq,xxljob,sharding
+  main:
+    allow-bean-definition-overriding: true
+# 配置mybatis
+mybatis:
+  type-aliases-package: com.ming.stock.pojo.entity #批量给实体类取别名 方便xml中直接使用别名 避免冗余配置
+  mapper-locations: classpath:mapper/*.xml  #配置加载mapper.xml资源
+  configuration:
+    map-underscore-to-camel-case: true # 开启驼峰映射 比如sys_user--->SysUser
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #通过mybatis执行的sql一日至的方式输出到终端
+# pagehelper配置分页插件
+pagehelper:
+  helper-dialect: mysql #指定分页数据库类型（方言）
+  reasonable: true #合理查询 比如总页数100 当查询101页时 自动查询最后一页 当查询-1页 默认查询第一页

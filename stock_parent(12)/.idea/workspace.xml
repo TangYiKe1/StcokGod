@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0cd9b605-7be6-4391-8ea1-49135e132020" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+    <option name="PARALLEL_COMPILATION" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\Tools\maven\repository" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../Tools/maven/apache-maven-3.9.9" />
+        <option name="userSettingsFile" value="D:\java_objcet\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2ztvEYsM7JS7ZIQopz8AficVipj" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.TestAll.testPwd.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestEasyExcel.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestEasyExcel.readExcel.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestEasyExcel.test01.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestJoda.testApi.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestJoda.testJoda.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestMapper.test01.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestPageHelper.test01.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestRedis.test01.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestRestTemplate.test01.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestRestTemplate.test02.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestRestTemplate.test03.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestRestTemplate.test04.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestRestTemplate.test05.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestRestTemplate.test06.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestRestTemplate.testInner.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestRestTemplate.testInnerGetMarketInfo.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.BackendApp.executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.JobApp.executor&quot;: &quot;Run&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/2025-2026/sharding-jdbc/练习项目/20250912/stock_parent项目&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.ming.stock.vo.resp.my" />
+      <recent name="com.ming.stock.service.impl" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\AStock_Demo\stock_parent(12)\stock_backend\src\main\java\com\ming\stock" />
+      <recent name="D:\AStock_Demo\stock_parent(12)\stock_backend\src\main\resources" />
+      <recent name="D:\AStock_Demo\stock_parent(12)\stock_common\src\main\java\com\ming\stock\pojo" />
+      <recent name="D:\IDEADemo\project\stock_parent\stock_job\src\main\resources" />
+      <recent name="D:\IDEADemo\project\stock_parent\stock_backend\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ming.stock.config" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.JwLogin">
+    <configuration name="JwLogin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ming.stock.pojo.JwLogin" />
+      <module name="stock_job" />
+      <shortenClasspath name="ARGS_FILE" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ming.stock.pojo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <shortenClasspath name="ARGS_FILE" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestSharding.testBoradCast" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="stock_backend" />
+      <shortenClasspath name="ARGS_FILE" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ming.stock.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ming.stock" />
+      <option name="MAIN_CLASS_NAME" value="com.ming.stock.TestSharding" />
+      <option name="METHOD_NAME" value="testBoradCast" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestSharding.testCommon4Db" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="stock_backend" />
+      <shortenClasspath name="ARGS_FILE" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ming.stock.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ming.stock" />
+      <option name="MAIN_CLASS_NAME" value="com.ming.stock.TestSharding" />
+      <option name="METHOD_NAME" value="testCommon4Db" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestSharding.testCommonDB" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="stock_backend" />
+      <shortenClasspath name="ARGS_FILE" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ming.stock.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ming.stock" />
+      <option name="MAIN_CLASS_NAME" value="com.ming.stock.TestSharding" />
+      <option name="METHOD_NAME" value="testCommonDB" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestSharding.testDef" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="stock_backend" />
+      <shortenClasspath name="ARGS_FILE" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ming.stock.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ming.stock" />
+      <option name="MAIN_CLASS_NAME" value="com.ming.stock.TestSharding" />
+      <option name="METHOD_NAME" value="testDef" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <shortenClasspath name="ARGS_FILE" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BackendApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="stock_backend" />
+      <option name="SHORTEN_COMMAND_LINE" value="MANIFEST" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ming.BackendApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JobApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="stock_job" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ming.JobApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.JwLogin" />
+        <item itemvalue="JUnit.TestSharding.testBoradCast" />
+        <item itemvalue="JUnit.TestSharding.testCommonDB" />
+        <item itemvalue="JUnit.TestSharding.testCommon4Db" />
+        <item itemvalue="JUnit.TestSharding.testDef" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0cd9b605-7be6-4391-8ea1-49135e132020" name="Changes" comment="" />
+      <created>1752563075010</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1752563075010</updated>
+      <workItem from="1752563076034" duration="1316000" />
+      <workItem from="1752564399727" duration="1605000" />
+      <workItem from="1752886430258" duration="15967000" />
+      <workItem from="1752975149990" duration="3523000" />
+      <workItem from="1752979309659" duration="11470000" />
+      <workItem from="1753231896236" duration="13647000" />
+      <workItem from="1753276533877" duration="1007000" />
+      <workItem from="1753278179392" duration="27000" />
+      <workItem from="1753318689106" duration="11978000" />
+      <workItem from="1753404707315" duration="16053000" />
+      <workItem from="1753667300460" duration="12300000" />
+      <workItem from="1753751652930" duration="16909000" />
+      <workItem from="1753837166620" duration="16257000" />
+      <workItem from="1753867133088" duration="59000" />
+      <workItem from="1753928894963" duration="1589000" />
+      <workItem from="1754010089060" duration="1185000" />
+      <workItem from="1754016308832" duration="3797000" />
+      <workItem from="1754376094577" duration="2924000" />
+      <workItem from="1754463193722" duration="9521000" />
+      <workItem from="1754887810527" duration="3683000" />
+      <workItem from="1755078258797" duration="605000" />
+      <workItem from="1755082746011" duration="617000" />
+      <workItem from="1755152353607" duration="7280000" />
+      <workItem from="1755493177161" duration="3483000" />
+      <workItem from="1755497052589" duration="384000" />
+      <workItem from="1755497446738" duration="318000" />
+      <workItem from="1755511079360" duration="3599000" />
+      <workItem from="1755911842506" duration="4214000" />
+      <workItem from="1756015050819" duration="11910000" />
+      <workItem from="1756099486543" duration="1640000" />
+      <workItem from="1756101145560" duration="2889000" />
+      <workItem from="1756106146231" duration="360000" />
+      <workItem from="1756166370674" duration="600000" />
+      <workItem from="1756201777544" duration="5310000" />
+      <workItem from="1756290129632" duration="8002000" />
+      <workItem from="1756375936479" duration="1496000" />
+      <workItem from="1756624969347" duration="10170000" />
+      <workItem from="1756708494976" duration="598000" />
+      <workItem from="1756808030854" duration="9438000" />
+      <workItem from="1756974568371" duration="7111000" />
+      <workItem from="1757037494080" duration="22000" />
+      <workItem from="1757057378850" duration="7671000" />
+      <workItem from="1757119081728" duration="6774000" />
+      <workItem from="1757146736388" duration="3574000" />
+      <workItem from="1757205493190" duration="14592000" />
+      <workItem from="1757317574956" duration="1485000" />
+      <workItem from="1757400088459" duration="601000" />
+      <workItem from="1757571104928" duration="1854000" />
+      <workItem from="1757636179542" duration="2000" />
+      <workItem from="1757663310707" duration="14550000" />
+      <workItem from="1757723976931" duration="4196000" />
+      <workItem from="1757828067776" duration="599000" />
+      <workItem from="1757904012400" duration="1463000" />
+      <workItem from="1758003328199" duration="1588000" />
+      <workItem from="1758173374575" duration="598000" />
+      <workItem from="1758248535628" duration="26000" />
+      <workItem from="1758438753816" duration="22000" />
+      <workItem from="1758601771550" duration="1215000" />
+      <workItem from="1758603089336" duration="904000" />
+      <workItem from="1758623056219" duration="987000" />
+      <workItem from="1759458759926" duration="2483000" />
+      <workItem from="1760757941092" duration="22000" />
+      <workItem from="1760764903125" duration="31000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/stock_backend/src/main/java/com/ming/stock/mq/StockMQMsgListener.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/stock_backend/src/main/java/com/ming/stock/service/impl/StockServiceImpl.java</url>
+          <line>327</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/stock_backend/src/main/java/com/ming/stock/service/impl/UserServiceImpl.java</url>
+          <line>264</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/stock_backend/src/main/java/com/ming/stock/service/impl/StockServiceImpl.java</url>
+          <line>383</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/stock_backend/src/main/java/com/ming/stock/service/impl/UserServiceImpl.java</url>
+          <line>316</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/stock_backend/src/main/java/com/ming/stock/service/impl/UserServiceImpl.java</url>
+          <line>225</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/stock_backend/src/main/java/com/ming/stock/controller/MyUserC1.java</url>
+          <line>103</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/stock_common/src/main/java/com/ming/stock/mapper/StockRtInfoMapper.java</url>
+          <line>115</line>
+          <properties class="com.ming.stock.mapper.StockRtInfoMapper" method="getPersonInfo">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/stock_common/src/main/java/com/ming/stock/mapper/SysUserMapper.java</url>
+          <line>48</line>
+          <properties class="com.ming.stock.mapper.SysUserMapper" method="getAllUserInfo">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/stock_job/src/main/java/com/ming/stock/service/StockTimerTaskService.java</url>
+          <line>23</line>
+          <properties class="com.ming.stock.service.StockTimerTaskService" method="getOuterStockInfo">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/stock_common/src/main/java/com/ming/stock/mapper/SysRolePermissionMapper.java</url>
+          <line>30</line>
+          <properties class="com.ming.stock.mapper.SysRolePermissionMapper" method="addinfo">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

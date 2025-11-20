@@ -1,0 +1,41 @@
+{
+  "code": 1,
+  "data": [
+    {
+      "id": null,
+      "marketCode": null,
+      "marketName": "道琼斯",
+      "curPoint": 34382.32,
+      "updown": -248.86,
+      "rose": -0.72,
+      "curTime": "2022-12-01T02:57:00.000+00:00"
+    },
+    {
+      "id": null,
+      "marketCode": null,
+      "marketName": "纳斯达克",
+      "curPoint": 13818.08,
+      "updown": -376.09,
+      "rose": -2.65,
+      "curTime": "2022-12-01T02:57:00.000+00:00"
+    },
+    {
+      "id": null,
+      "marketCode": null,
+      "marketName": "道琼斯",
+      "curPoint": 34392.32,
+      "updown": -248.86,
+      "rose": -0.72,
+      "curTime": "2023-01-01T02:57:00.000+00:00"
+    },
+    {
+      "id": null,
+      "marketCode": null,
+      "marketName": "纳斯达克",
+      "curPoint": 13828.08,
+      "updown": -376.09,
+      "rose": -2.65,
+      "curTime": "2023-01-01T02:57:00.000+00:00"
+    }
+  ]
+}

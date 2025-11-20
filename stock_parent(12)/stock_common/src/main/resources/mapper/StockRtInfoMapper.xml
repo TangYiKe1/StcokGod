@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ming.stock.mapper.StockRtInfoMapper">
+
+    <resultMap id="BaseResultMap" type="com.ming.stock.pojo.entity.StockRtInfo">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="stockCode" column="stock_code" jdbcType="CHAR"/>
+            <result property="stockName" column="stock_name" jdbcType="VARCHAR"/>
+            <result property="preClosePrice" column="pre_close_price" jdbcType="DECIMAL"/>
+            <result property="openPrice" column="open_price" jdbcType="DECIMAL"/>
+            <result property="curPrice" column="cur_price" jdbcType="DECIMAL"/>
+            <result property="minPrice" column="min_price" jdbcType="DECIMAL"/>
+            <result property="maxPrice" column="max_price" jdbcType="DECIMAL"/>
+            <result property="tradeAmount" column="trade_amount" jdbcType="BIGINT"/>
+            <result property="tradeVolume" column="trade_volume" jdbcType="DECIMAL"/>
+            <result property="curTime" column="cur_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,stock_code,stock_name,
+        pre_close_price,open_price,cur_price,
+        min_price,max_price,trade_amount,
+        trade_volume,cur_time
+    </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from stock_rt_info
+        where  id = #{id,jdbcType=BIGINT} 
+    </select>
+    <select id="getStockPageInfoByTime" resultType="com.ming.stock.pojo.domain.StockUpdownDomain">
+        SELECT
+            sri.trade_amount AS tradeAmt,
+            sri.pre_close_price AS preClosePrice,
+            (sri.max_price-sri.min_price)/sri.pre_close_price AS amplitude,
+            sri.stock_code AS code,
+            sri.stock_name AS name,
+            sri.cur_time AS curDate,
+            sri.trade_volume AS tradeVol,
+            (sri.cur_price-sri.pre_close_price) AS upDown,
+            (sri.cur_price-sri.pre_close_price)/sri.pre_close_price AS increase,
+            sri.cur_price AS tradePrice
+        FROM
+            stock_rt_info AS sri
+        WHERE
+            sri.cur_time = #{curDate}
+        ORDER BY
+            upDown DESC
+    </select>
+    <select id="findTopStockIncreate" resultType="com.ming.stock.pojo.domain.StockUpdownDomain">
+        SELECT
+            sri.trade_amount AS tradeAmt,
+            sri.pre_close_price AS preClosePrice,
+            ( sri.max_price - sri.min_price )/ sri.pre_close_price AS amplitude,
+            sri.stock_code AS code,
+            sri.stock_name AS name,
+            sri.cur_time AS curDate,
+            sri.trade_volume AS tradeVol,
+            ( sri.cur_price - sri.pre_close_price ) AS upDown,
+            ( sri.cur_price - sri.pre_close_price )/ sri.pre_close_price AS increase,
+            sri.cur_price AS tradePrice
+        FROM
+            stock_rt_info AS sri
+        WHERE
+            sri.cur_time = #{curDate}
+        ORDER BY
+            increase DESC
+            LIMIT 4
+    </select>
+    <select id="getStockUpdownCount" resultType="java.util.Map">
+        SELECT
+        tmp.time,
+        count(*) AS count
+        FROM
+        (
+        SELECT
+        ( cur_price - pre_close_price )/ pre_close_price AS ud,
+        DATE_FORMAT( cur_time, '%Y%m%d%H%i' ) AS time
+        FROM
+        stock_rt_info
+        WHERE
+        cur_time BETWEEN #{startDate}
+        AND #{endDate}
+        HAVING
+        ud <if test="flag==1">
+                >= 0.1
+            </if>
+        <if test="flag==0">
+            &lt;= -0.1
+        </if>
+        ) AS tmp
+        GROUP BY
+        tmp.time;
+    </select>
+    <select id="getIncreaseRangeInfo" resultType="java.util.Map">
+        SELECT title, count(*) AS count
+        FROM (SELECT CASE
+            WHEN tmp.rate > 0.07 THEN '>7%'
+            WHEN tmp.rate > 0.05 AND tmp.rate &lt;= 0.07 THEN '5~7%'
+            WHEN tmp.rate > 0.03 AND tmp.rate &lt;= 0.05 THEN '3~5%'
+            WHEN tmp.rate > 0 AND tmp.rate &lt;= 0.03 THEN '0~3%'
+            WHEN tmp.rate > -0.03 AND tmp.rate &lt;= 0 THEN '-3~0%'
+            WHEN tmp.rate > -0.05 AND tmp.rate &lt;= -0.03 THEN '-5~-3%'
+            WHEN tmp.rate > -0.07 AND tmp.rate &lt;= -0.05 THEN '-7~-5%'
+            ELSE '&lt;-7%'
+            END 'title'
+            FROM (SELECT (cur_price-pre_close_price)/pre_close_price AS rate FROM stock_rt_info WHERE cur_time= #{curDate}) AS tmp) AS tmp2
+        GROUP BY tmp2.title;
+    </select>
+    <select id="getStockScreenTimeSharing" resultType="com.ming.stock.pojo.domain.Stock4MinuteDomain">
+        SELECT
+            sri.cur_time AS date,
+	        sri.trade_amount AS tradeAmt,
+            sri.stock_code AS code,
+            sri.min_price AS lowPrice,
+            sri.pre_close_price AS preClosePrice,
+            sri.stock_name AS name,
+            sri.max_price AS highPrice,
+            sri.open_price AS openPrice,
+            sri.trade_volume AS tradeVol,
+            sri.cur_price AS tradePrice
+        FROM
+            stock_rt_info AS sri
+        WHERE
+            sri.stock_code = #{stockCode}
+          AND sri.cur_time BETWEEN #{openDate}
+          AND #{endDate}
+    </select>
+    <select id="getStockScreenDKLine" resultType="com.ming.stock.pojo.domain.Stock4EvrDayDomain">
+        SELECT
+            sri.cur_time AS date,
+            sri.trade_amount AS tradeAmt,
+            sri.stock_code AS code,
+            sri.min_price AS lowPrice,
+            sri.stock_name AS name,
+            sri.max_price AS highPrice,
+            sri.open_price AS openPrice,
+            sri.trade_volume AS tradeVol,
+            sri.cur_price AS closePrice,
+            sri.pre_close_price AS preClosePrice
+        FROM
+            stock_rt_info AS sri
+        WHERE
+            stock_code = #{stockCode}
+          AND sri.cur_time IN (
+            SELECT
+            MAX( cur_time ) AS mxTime
+            FROM
+            stock_rt_info
+            WHERE
+            stock_code = #{stockCode}
+          AND cur_time BETWEEN #{startDate}
+          AND #{endDate}
+            GROUP BY
+            DATE_FORMAT( cur_time, '%Y%m%d' )
+            )
+    </select>
+    <select id="getMxTime4EvryDay" resultType="java.util.Date">
+        SELECT
+            MAX( cur_time ) AS mxTime
+        FROM
+            stock_rt_info
+        WHERE
+            stock_code = #{stockCode}
+          AND cur_time BETWEEN #{startDate}
+            AND #{endDate}
+        GROUP BY
+            DATE_FORMAT( cur_time, '%Y%m%d')
+    </select>
+    <select id="getStock4DkLine2" resultType="com.ming.stock.pojo.domain.Stock4EvrDayDomain">
+        SELECT
+            sri.cur_time AS date,
+            sri.trade_amount AS tradeAmt,
+            sri.stock_code AS code,
+            sri.min_price AS lowPrice,
+            sri.stock_name AS name,
+            sri.max_price AS highPrice,
+            sri.open_price AS openPrice,
+            sri.trade_volume AS tradeVol,
+            sri.cur_price AS closePrice,
+            sri.pre_close_price AS preClosePrice
+        FROM
+            stock_rt_info AS sri
+        WHERE
+            stock_code = #{stockCode}
+          AND sri.cur_time IN
+        <foreach collection="mxTimes" item="time" separator="," open="(" close=")">
+            #{time}
+        </foreach>
+    </select>
+    <select id="getPersonInfo" resultType="com.ming.stock.pojo.my.PersonInfo">
+        SELECT
+            trade_amount as tradeAmt,
+            pre_close_price as preClosePrice,
+            open_price AS openPrice,
+            trade_volume AS tradeVol,
+            cur_price as tradePrice,
+            cur_time as curDate,
+            min_price as lowPrice,
+            max_price as highPrice
+        from
+            stock_rt_info
+        WHERE stock_code=#{code}
+        ORDER BY cur_time DESC LIMIT 1;
+    </select>
+    <select id="getCahngeLim10" resultType="com.ming.stock.pojo.my.GetChangeLim10">
+        SELECT
+            DATE_FORMAT(cur_time, '%Y%m%d%H%i') AS `date`,
+            trade_amount AS tradeAmt,
+            trade_volume AS tradeVol,
+            ROUND(trade_volume / NULLIF(trade_amount, 0), 2) AS tradePrice
+        FROM stock_rt_info
+        WHERE stock_code=#{code} ORDER BY trade_amount DESC LIMIT 10 ;
+    </select>
+    <select id="selectNotClaer" resultType="com.ming.stock.pojo.entity.StockRtInfo">
+        SELECT stock_code AS stockCode,
+               stock_name AS stockName
+        FROM stock_rt_info
+        WHERE stock_code LIKE CONCAT('%', #{resInfo}, '%')
+    </select>
+    <select id="WeekInfoSelect" resultType="com.ming.stock.pojo.my.WeekInfoDomin">
+        SELECT
+            stock_code AS stockCode,
+            MIN(cur_price) AS weekLow,                             -- 一周最低价（weekLow）
+            MIN(cur_price) AS minPrice,                             -- 一周最低价（minPrice）
+            MAX(cur_price) AS maxPrice,                             -- 一周最高价
+            AVG(cur_price) AS avgPrice,                             -- 一周平均价
+            SUBSTRING_INDEX(GROUP_CONCAT(cur_price ORDER BY cur_time ASC), ',', 1) AS openPrice,   -- 周一开盘价
+            SUBSTRING_INDEX(GROUP_CONCAT(cur_price ORDER BY cur_time DESC), ',', 1) AS closePrice, -- 周五收盘价（或最新价格）
+            MAX(cur_time) AS mxTime                                  -- 一周最大时间
+        FROM stock_rt_info
+        WHERE stock_code = #{code}
+          AND cur_time BETWEEN #{preTime} AND #{lastTime}
+        GROUP BY stock_code;
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        delete from stock_rt_info
+        where  id = #{id,jdbcType=BIGINT} 
+    </delete>
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.ming.stock.pojo.entity.StockRtInfo" useGeneratedKeys="true">
+        insert into stock_rt_info
+        ( id,stock_code,stock_name
+        ,pre_close_price,open_price,cur_price
+        ,min_price,max_price,trade_amount
+        ,trade_volume,cur_time)
+        values (#{id,jdbcType=BIGINT},#{stockCode,jdbcType=CHAR},#{stockName,jdbcType=VARCHAR}
+        ,#{preClosePrice,jdbcType=DECIMAL},#{openPrice,jdbcType=DECIMAL},#{curPrice,jdbcType=DECIMAL}
+        ,#{minPrice,jdbcType=DECIMAL},#{maxPrice,jdbcType=DECIMAL},#{tradeAmount,jdbcType=BIGINT}
+        ,#{tradeVolume,jdbcType=DECIMAL},#{curTime,jdbcType=TIMESTAMP})
+    </insert>
+    <insert id="insertBatch">
+        INSERT INTO stock_rt_info
+        (id, stock_code, stock_name, pre_close_price, open_price, cur_price,
+        min_price, max_price, trade_amount, trade_volume, cur_time)
+        VALUES
+        <foreach collection="list" item="info" separator=",">
+            (#{info.id}, #{info.stockCode}, #{info.stockName},
+            #{info.preClosePrice}, #{info.openPrice}, #{info.curPrice},
+            #{info.minPrice}, #{info.maxPrice}, #{info.tradeAmount},
+            #{info.tradeVolume}, #{info.curTime})
+        </foreach>
+        ON DUPLICATE KEY UPDATE
+        cur_price = VALUES(cur_price),
+        min_price = VALUES(min_price),
+        max_price = VALUES(max_price),
+        trade_amount = VALUES(trade_amount),
+        trade_volume = VALUES(trade_volume)
+    </insert>
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.ming.stock.pojo.entity.StockRtInfo" useGeneratedKeys="true">
+        insert into stock_rt_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+                <if test="id != null">id,</if>
+                <if test="stockCode != null">stock_code,</if>
+                <if test="stockName != null">stock_name,</if>
+                <if test="preClosePrice != null">pre_close_price,</if>
+                <if test="openPrice != null">open_price,</if>
+                <if test="curPrice != null">cur_price,</if>
+                <if test="minPrice != null">min_price,</if>
+                <if test="maxPrice != null">max_price,</if>
+                <if test="tradeAmount != null">trade_amount,</if>
+                <if test="tradeVolume != null">trade_volume,</if>
+                <if test="curTime != null">cur_time,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+                <if test="id != null">#{id,jdbcType=BIGINT},</if>
+                <if test="stockCode != null">#{stockCode,jdbcType=CHAR},</if>
+                <if test="stockName != null">#{stockName,jdbcType=VARCHAR},</if>
+                <if test="preClosePrice != null">#{preClosePrice,jdbcType=DECIMAL},</if>
+                <if test="openPrice != null">#{openPrice,jdbcType=DECIMAL},</if>
+                <if test="curPrice != null">#{curPrice,jdbcType=DECIMAL},</if>
+                <if test="minPrice != null">#{minPrice,jdbcType=DECIMAL},</if>
+                <if test="maxPrice != null">#{maxPrice,jdbcType=DECIMAL},</if>
+                <if test="tradeAmount != null">#{tradeAmount,jdbcType=BIGINT},</if>
+                <if test="tradeVolume != null">#{tradeVolume,jdbcType=DECIMAL},</if>
+                <if test="curTime != null">#{curTime,jdbcType=TIMESTAMP},</if>
+        </trim>
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.ming.stock.pojo.entity.StockRtInfo">
+        update stock_rt_info
+        <set>
+                <if test="stockCode != null">
+                    stock_code = #{stockCode,jdbcType=CHAR},
+                </if>
+                <if test="stockName != null">
+                    stock_name = #{stockName,jdbcType=VARCHAR},
+                </if>
+                <if test="preClosePrice != null">
+                    pre_close_price = #{preClosePrice,jdbcType=DECIMAL},
+                </if>
+                <if test="openPrice != null">
+                    open_price = #{openPrice,jdbcType=DECIMAL},
+                </if>
+                <if test="curPrice != null">
+                    cur_price = #{curPrice,jdbcType=DECIMAL},
+                </if>
+                <if test="minPrice != null">
+                    min_price = #{minPrice,jdbcType=DECIMAL},
+                </if>
+                <if test="maxPrice != null">
+                    max_price = #{maxPrice,jdbcType=DECIMAL},
+                </if>
+                <if test="tradeAmount != null">
+                    trade_amount = #{tradeAmount,jdbcType=BIGINT},
+                </if>
+                <if test="tradeVolume != null">
+                    trade_volume = #{tradeVolume,jdbcType=DECIMAL},
+                </if>
+                <if test="curTime != null">
+                    cur_time = #{curTime,jdbcType=TIMESTAMP},
+                </if>
+        </set>
+        where   id = #{id,jdbcType=BIGINT} 
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.ming.stock.pojo.entity.StockRtInfo">
+        update stock_rt_info
+        set 
+            stock_code =  #{stockCode,jdbcType=CHAR},
+            stock_name =  #{stockName,jdbcType=VARCHAR},
+            pre_close_price =  #{preClosePrice,jdbcType=DECIMAL},
+            open_price =  #{openPrice,jdbcType=DECIMAL},
+            cur_price =  #{curPrice,jdbcType=DECIMAL},
+            min_price =  #{minPrice,jdbcType=DECIMAL},
+            max_price =  #{maxPrice,jdbcType=DECIMAL},
+            trade_amount =  #{tradeAmount,jdbcType=BIGINT},
+            trade_volume =  #{tradeVolume,jdbcType=DECIMAL},
+            cur_time =  #{curTime,jdbcType=TIMESTAMP}
+        where   id = #{id,jdbcType=BIGINT} 
+    </update>
+</mapper>
