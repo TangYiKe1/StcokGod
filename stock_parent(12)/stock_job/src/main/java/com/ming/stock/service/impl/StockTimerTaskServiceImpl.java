@@ -36,6 +36,7 @@ import java.util.stream.Collectors;
 /**
  * @Author: Ming
  * @Description TODO
+ * 获取外部数据的一个类
  */
 @Service
 @Slf4j

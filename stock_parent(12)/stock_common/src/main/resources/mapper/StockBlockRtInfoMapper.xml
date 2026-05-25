@@ -90,17 +90,6 @@
                 <if test="tradeVolume != null">trade_volume,</if>
                 <if test="curTime != null">cur_time,</if>
         </trim>
-        <trim prefix="values (" suffix=")" suffixOverrides=",">
-                <if test="id != null">#{id,jdbcType=BIGINT},</if>
-                <if test="label != null">#{label,jdbcType=VARCHAR},</if>
-                <if test="blockName != null">#{blockName,jdbcType=VARCHAR},</if>
-                <if test="companyNum != null">#{companyNum,jdbcType=INTEGER},</if>
-                <if test="avgPrice != null">#{avgPrice,jdbcType=DECIMAL},</if>
-                <if test="updownRate != null">#{updownRate,jdbcType=DECIMAL},</if>
-                <if test="tradeAmount != null">#{tradeAmount,jdbcType=BIGINT},</if>
-                <if test="tradeVolume != null">#{tradeVolume,jdbcType=DECIMAL},</if>
-                <if test="curTime != null">#{curTime,jdbcType=TIMESTAMP},</if>
-        </trim>
     </insert>
 
     <update id="updateByPrimaryKeySelective" parameterType="com.ming.stock.pojo.entity.StockBlockRtInfo">

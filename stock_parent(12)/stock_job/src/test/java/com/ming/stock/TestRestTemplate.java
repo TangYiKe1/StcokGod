@@ -132,7 +132,7 @@ public class TestRestTemplate {
     * */
     @Test
     public void testInnerGetMarketInfo(){
-        //stockTimerTaskService.getInnerMarketInfo();
+        stockTimerTaskService.getInnerMarketInfo();
         stockTimerTaskService.getStockRtIndex();
     }
     /*

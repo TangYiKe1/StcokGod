@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0cd9b605-7be6-4391-8ea1-49135e132020" name="Changes" comment="" />
+    <list default="true" id="0cd9b605-7be6-4391-8ea1-49135e132020" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock_common/src/main/resources/mapper/StockBlockRtInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/stock_common/src/main/resources/mapper/StockBlockRtInfoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock_job/src/main/java/com/ming/stock/service/impl/StockTimerTaskServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock_job/src/main/java/com/ming/stock/service/impl/StockTimerTaskServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock_job/src/test/java/com/ming/stock/TestRestTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock_job/src/test/java/com/ming/stock/TestRestTemplate.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +26,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -66,9 +74,10 @@
     &quot;Spring Boot.BackendApp.executor&quot;: &quot;Debug&quot;,
     &quot;Spring Boot.JobApp.executor&quot;: &quot;Run&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/2025-2026/sharding-jdbc/练习项目/20250912/stock_parent项目&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/唐屹珂/Desktop/JavaWeb_7.2&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -77,7 +86,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -105,7 +114,7 @@
       <recent name="com.ming.stock.config" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.JwLogin">
+  <component name="RunManager" selected="Spring Boot.BackendApp">
     <configuration name="JwLogin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ming.stock.pojo.JwLogin" />
       <module name="stock_job" />
@@ -122,6 +131,23 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <shortenClasspath name="ARGS_FILE" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestAll.testPwd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="stock_backend" />
+      <shortenClasspath name="ARGS_FILE" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ming.stock.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ming.stock" />
+      <option name="MAIN_CLASS_NAME" value="com.ming.stock.TestAll" />
+      <option name="METHOD_NAME" value="testPwd" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -177,23 +203,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestSharding.testDef" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="stock_backend" />
-      <shortenClasspath name="ARGS_FILE" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ming.stock.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.ming.stock" />
-      <option name="MAIN_CLASS_NAME" value="com.ming.stock.TestSharding" />
-      <option name="METHOD_NAME" value="testDef" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <shortenClasspath name="ARGS_FILE" />
       <option name="TEST_OBJECT" value="class" />
@@ -218,11 +227,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestAll.testPwd" />
         <item itemvalue="Application.JwLogin" />
         <item itemvalue="JUnit.TestSharding.testBoradCast" />
         <item itemvalue="JUnit.TestSharding.testCommonDB" />
         <item itemvalue="JUnit.TestSharding.testCommon4Db" />
-        <item itemvalue="JUnit.TestSharding.testDef" />
       </list>
     </recent_temporary>
   </component>
@@ -297,6 +306,24 @@
       <workItem from="1759458759926" duration="2483000" />
       <workItem from="1760757941092" duration="22000" />
       <workItem from="1760764903125" duration="31000" />
+      <workItem from="1764464409415" duration="1205000" />
+      <workItem from="1764581335827" duration="418000" />
+      <workItem from="1764655496334" duration="18000" />
+      <workItem from="1764847431384" duration="716000" />
+      <workItem from="1764892957932" duration="599000" />
+      <workItem from="1764924525345" duration="828000" />
+      <workItem from="1765017427013" duration="597000" />
+      <workItem from="1765069081008" duration="77000" />
+      <workItem from="1771300204551" duration="2813000" />
+      <workItem from="1771416304634" duration="736000" />
+      <workItem from="1771581124413" duration="2291000" />
+      <workItem from="1773737170598" duration="628000" />
+      <workItem from="1776250841343" duration="168000" />
+      <workItem from="1776251619925" duration="22000" />
+      <workItem from="1778928798359" duration="870000" />
+      <workItem from="1779096957938" duration="674000" />
+      <workItem from="1779097656746" duration="1231000" />
+      <workItem from="1779703636423" duration="1333000" />
     </task>
     <servers />
   </component>
@@ -335,11 +362,6 @@
           <url>file://$PROJECT_DIR$/stock_backend/src/main/java/com/ming/stock/service/impl/UserServiceImpl.java</url>
           <line>225</line>
           <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/stock_backend/src/main/java/com/ming/stock/controller/MyUserC1.java</url>
-          <line>103</line>
-          <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/stock_common/src/main/java/com/ming/stock/mapper/StockRtInfoMapper.java</url>
